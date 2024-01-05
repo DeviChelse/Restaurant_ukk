@@ -34,55 +34,65 @@
 
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <style>
+        <style>
+      body {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Playfair Display', serif;
+      }
+
       .wrap {
-        width: 90%;
-        max-width: 750px;
-        margin: 0 auto;
+          max-width: 750px;
+          margin: 0 auto;
+          padding: 10px;
       }
 
       .banner {
-        width: 100%;
-        height: 20vh;
-        background-image: url("{{ url_for('static', filename='banner.jpg') }}");
-        background-position: center;
-        background-size: contain;
-        background-repeat: repeat;
+          width: 100%;
+          height: 20vh;
+          background-image: url("{{ url_for('static', filename='banner.jpg') }}");
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: white;
       }
 
       h1.title {
-        font-family: "Playfair Display", serif;
-        color: white;
-        font-size: 2.5rem;
-      }
-
-      h5 {
-        font-family: 'Playfair Display', serif;
+          font-size: 3rem;
+          margin: 0;
       }
 
       .restaurant-list {
-        overflow: scroll;
-        width: 100%;
-        height: calc(20vh - 30px);
-        position: relative;
+          max-height: calc(20vh - 30px);
+          overflow: auto;
+          margin-top: 10px;
       }
 
-      .card-title,
-      .card-subtitle {
-        display: inline;
+      .card {
+          margin-bottom: 10px;
       }
 
       #map {
-        width: 100%;
-        height: 50vh;
-        margin: 20px auto 20px auto;
+          width: 100%;
+          height: 50vh;
+          margin: 20px 0;
       }
 
-      .iw-inner {
-        padding: 10px;
-        font-size: smaller;
+      .card-body {
+          position: relative;
       }
-    </style>
+
+      .btn-danger {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+      }
+  </style>   
     <script>
       let map;
 
